@@ -10,7 +10,7 @@ export default function CreateTask() {
   const [activity, setOnChangeActivity] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/todos/${id}`)
+      .get(`https://practice-api-8tpb.onrender.com/todos/${id}`)
       .then((response) => {
         setOnChangeActivity(response.data.activity);
       })
@@ -24,10 +24,13 @@ export default function CreateTask() {
     const activityvar = { activity: activity };
     console.log(activityvar);
 
-    console.log(`http://localhost:5000/todos/update/${id}`);
+    console.log(`https://practice-api-8tpb.onrender.com/todos/update/${id}`);
 
     axios
-      .post(`http://localhost:5000/todos/update/${id}`, activityvar)
+      .post(
+        `https://practice-api-8tpb.onrender.com/todos/update/${id}`,
+        activityvar
+      )
       .then((res) => {
         window.location = "/";
       });
