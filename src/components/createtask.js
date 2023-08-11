@@ -9,9 +9,11 @@ export default function CreateTask() {
     e.preventDefault();
     const activityvar = { activity: activity };
 
-    axios.post("http://localhost:5000/todos/add", activityvar).then((res) => {
-      window.location = "/";
-    });
+    axios
+      .post("https://practice-api-8tpb.onrender.com/todos/add", activityvar)
+      .then((res) => {
+        window.location = "/";
+      });
   };
 
   return (
