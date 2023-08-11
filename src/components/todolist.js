@@ -28,7 +28,7 @@ export default function Todolist() {
   const [todos, setTodoList] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/todos/")
+      .get("https://practice-api-8tpb.onrender.com/todos/")
       .then((response) => {
         setTodoList(response.data);
       })
@@ -39,7 +39,7 @@ export default function Todolist() {
 
   const deleteTodo = (id) => {
     axios
-      .delete("http://localhost:5000/todos/delete/" + id)
+      .delete("https://practice-api-8tpb.onrender.com/todos/delete/" + id)
       .then((response) => {
         console.log(response.data);
       });
